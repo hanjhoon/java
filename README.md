@@ -14,12 +14,15 @@
  - ## 1.4. Time
    - #### [1.4.1. Time](https://github.com/hanjhoon/java/blob/main/oop/src/time/Time.java)
    - #### [1.4.2. TestMain](https://github.com/hanjhoon/java/blob/main/oop/src/time/TestMain.java)
+ - ## 1.5. Ball
+   - #### [1.5.1. Ball](https://github.com/hanjhoon/java/blob/main/oop/src/ball/Time.java)
+   - #### [1.5.2. TestMain](https://github.com/hanjhoon/java/blob/main/oop/src/ball/TestMain.java)
  
- - ## 1.5. Exam01
-   - #### [1.5.1. Circle](https://github.com/hanjhoon/java/blob/main/oop/src/exam01/Circle.java)
-   - #### [1.5.2. TestMain](https://github.com/hanjhoon/java/blob/main/oop/src/exam01/TsetMain.java)
+ - ## Exam01
+   - #### [Circle](https://github.com/hanjhoon/java/blob/main/oop/src/exam01/Circle.java)
+   - #### [TestMain](https://github.com/hanjhoon/java/blob/main/oop/src/exam01/TsetMain.java)
  
- - ## 1.6. Exam02
-   - #### [1.6.1. Rectangle](https://github.com/hanjhoon/java/blob/main/oop/src/exam02/Rectangle.java)
-   - #### [1.6.2. TestMain](https://github.com/hanjhoon/java/blob/main/oop/src/exam02/TestMain.java)
+ - ## Exam02
+   - #### [Rectangle](https://github.com/hanjhoon/java/blob/main/oop/src/exam02/Rectangle.java)
+   - #### [TestMain](https://github.com/hanjhoon/java/blob/main/oop/src/exam02/TestMain.java)
  
