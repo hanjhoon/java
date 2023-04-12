@@ -171,3 +171,19 @@ public class EmployeeServlet extends HttpServlet {
 
     - EmployeeServlet.java
     > @WebServlet(urlPatterns = "/employees")
+
+
+  - ## Filter
+ ```java
+      <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>com.playdata.CharacterEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+ ```
+  - ### WebFilter
+    - @WebFilter("/*")
+    
