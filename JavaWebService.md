@@ -87,3 +87,87 @@ public class FirstServlet extends HttpServlet {
     <version>3.1.3</version>
 </dependency>
 ```
+  - # DBUtil 클래스 생성 (web.xml에 param 추가)
+``` java
+<context-param>
+    <param-name>DB_URL</param-name>
+    <param-value>jdbc:mariadb://localhost:3306/mydatabase</param-value>
+</context-param>
+<context-param>
+    <param-name>DB_USER</param-name>
+    <param-value>root</param-value>
+</context-param>
+<context-param>
+    <param-name>DB_PASSWORD</param-name>
+    <param-value>playdata</param-value>
+</context-param>
+
+```
+
+```java
+package com.playdata;
+
+import javax.servlet.ServletContext;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DBUtil {
+    public static Connection getConnection(ServletContext context) throws SQLException, ClassNotFoundException{
+        String url = context.getInitParameter("DB_URL");
+        String user  = context.getInitParameter("DB_USER");
+        String password  = context.getInitParameter("DB_PASSWORD");
+
+        Class.forName("org.mariadb.jdbc.Driver");
+        return DriverManager.getConnection(url, user, password);
+    }
+}
+
+```
+  - # Servlet
+```java
+package com.playdata;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class EmployeeServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html; charset=UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+        PrintWriter out = resp.getWriter();
+        String sql =  "SELECT * FROM employees";
+        try (
+            Connection con = DBUtil.getConnection(req.getServletContext());
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                out.print(rs.getInt("emp_no") + ", ");
+                out.print(rs.getString("birth_date") + ", ");
+                out.print(rs.getString("first_name") + ", ");
+                out.print(rs.getString("last_name") + ", ");
+                out.print(rs.getString("gender") + ", ");
+                out.print(rs.getString("hire_date") + ", <br>");
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+```
+  - ### 자동 mapping
+    - web.xml
+    > metadata-complete="false" 
+
+    - EmployeeServlet.java
+    > @WebServlet(urlPatterns = "/employees")
