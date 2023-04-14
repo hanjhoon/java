@@ -31,3 +31,6 @@
  
  # java web
   - ### [servlet](https://github.com/hanjhoon/java/blob/main/JavaWebService.md)
+  - ### [Insert 기능 구현](https://github.com/hanjhoon/java/blob/main/insert.md)
+ # html
+  - ### [html](https://github.com/hanjhoon/java/blob/main/form.md)
