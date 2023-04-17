@@ -32,5 +32,6 @@
  # java web
   - ### [servlet](https://github.com/hanjhoon/java/blob/main/JavaWebService.md)
   - ### [Insert 기능 구현](https://github.com/hanjhoon/java/blob/main/insert.md)
- # html
-  - ### [html](https://github.com/hanjhoon/java/blob/main/form.md)
+ # html, css
+  - ### [html 기초](https://github.com/hanjhoon/java/blob/main/form.md)
+  - ### [html 심화](https://github.com/hanjhoon/java/blob/main/html_selector.md)
