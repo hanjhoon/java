@@ -16,9 +16,6 @@
         .my-class {
             font-size: 3vw;
         }
-        .my-class p {
-            color: red;
-        }
 
         /* 아이디 선택자 (ID Selector) */
         #my-id {
@@ -127,4 +124,119 @@
             <option value="male">남성</option>
             <option value="female">여성</option>
         </select>
+
+    <label for="agree">약관 동의</label>
+    <input type="checkbox" id="agree" name="agree">
+
+    <button type="submit">제출</button>
+</form>
+
+<h2>테이블</h2>
+<table>
+    <thead>
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>성별</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>홍길동</td>
+            <td>20</td>
+            <td>남성</td>
+        </tr>
+        <tr>
+            <td>김영희</td>
+            <td>25</td>
+            <td>여성</td>
+        </tr>
+        <tr>
+            <td>이철수</td>
+            <td>30</td>
+            <td>남성</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="box">박스</div>
+
+<style>
+    /* 폼 요소 스타일 */
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        margin-bottom: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    button[type="submit"] {
+        margin-top: 10px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(11, 23, 45);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* 테이블 스타일 */
+    table {
+        border-collapse: collapse;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+    th {
+        background-color: rgb(11, 23, 45);
+        color: white;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: rgba(11, 23, 45, 0.1);
+    }
+
+    /* 박스 스타일 */
+    .box {
+        margin-top: 20px;
+        width: 200px;
+        height: 200px;
+        background-color: beige;
+        border-radius: 10px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+</style>
 ```
